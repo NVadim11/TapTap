@@ -139,10 +139,25 @@ const Header = () => {
                 right: '0!important',
                 maxWidth: '100%',
                 maxHeight: '100%',
-                fontFamily: 'FMTS !important',  // Добавление !important
+                fontFamily: 'FMTS !important', 
                 '& *': {
-                  fontFamily: 'FMTS !important',  // Применение ко всем дочерним элементам
+                  fontFamily: 'FMTS !important', 
                 },
+                '& ul': {
+                  padding: '31px 0 0 0', 
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                },
+                '& li': {
+                  padding: '0 16px',
+                  height: '52px',
+                  fontWeight: 700,
+                  fontSize: '24px',
+                  lineHeight: '133%',
+                  textAlign: 'center',
+                  color: '#0e0b3d',
+                }
               },
             }}>
 							{menuItems.map((item, index) => (
