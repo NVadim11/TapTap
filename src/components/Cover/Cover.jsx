@@ -1,77 +1,64 @@
 import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
+import { useTheme, useMediaQuery } from '@mui/material';
+import coverImg from '../../img/cover-img.png';
 
 const Cover = () => {
-	return (
-		<>
-			<div id='cover'>
-				<div>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-					excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-					officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-					rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-					est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-					possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-					autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-					ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
-					rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-					alias consequatur aut perferendis doloribus asperiores repellat
-				</div>
-				<div>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-					excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-					officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-					rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-					est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-					possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-					autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-					ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
-					rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-					alias consequatur aut perferendis doloribus asperiores repellat
-				</div>
-				<div>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-					excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-					officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-					rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-					est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-					possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-					autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-					ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
-					rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-					alias consequatur aut perferendis doloribus asperiores repellat
-				</div>
-				<div>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-					excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-					officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-					rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-					est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-					possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-					autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-					ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
-					rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-					alias consequatur aut perferendis doloribus asperiores repellat
-				</div>
-				<div>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-					praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-					excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-					officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-					rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-					est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
-					possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-					autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-					ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
-					rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-					alias consequatur aut perferendis doloribus asperiores repellat
-				</div>
-			</div>
-		</>
-	);
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
+
+    const coverStyles = {
+        position: 'absolute',
+        top: 0,
+        left: isMobile ? '-16px' : '-66px', 
+        width: '100%',
+        height: '100%',
+      };
+  return (
+    <Box
+      id='cover'
+      sx={{
+        position: 'relative',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: '#fff',
+        textAlign: 'center',
+        boxSizing: 'border-box',
+      }}
+    >
+      <img src={coverImg} alt="Cover" style={coverStyles} />
+      <Box sx={{
+        position: 'relative',
+        zIndex: 1,
+      }}>
+        <Typography variant="h1" sx={{
+          fontSize: '3rem',
+          fontWeight: 'bold',
+          marginBottom: '20px',
+          color: '#fff',
+        }}>
+          Launch your Telegram 
+app in two weeks
+        </Typography>
+        <Typography variant="body1" sx={{
+          fontSize: '1.25rem',
+          marginBottom: '30px',
+          color: '#fff',
+        }}>
+         All-in-One Hub for Launching and Boosting Your Projects on Telegram!
+        </Typography>
+        <Button variant="contained" color="primary" sx={{
+          padding: '10px 20px',
+          fontSize: '1rem',
+          borderRadius: '8px',
+        }}>
+          Book a Discovery Call
+        </Button>
+      </Box>
+    </Box>
+  );
 };
 
 export default Cover;
