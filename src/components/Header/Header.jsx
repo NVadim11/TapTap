@@ -129,15 +129,20 @@ const Header = () => {
             PaperProps={{
               sx: {
                 width: '100%',
-                height: '100%',
+                left: '0!important',
+                height: '100%!important',
                 borderRadius: '24px 24px 0 0',
                 background: 'linear-gradient(314deg, #d1f0e2 43.89%, #a4b8fe 100%)',
-                positon: 'absolute',
-                top: '80px',
-                bottom: '0',
+                top: '80px!important',
+                bottom: '0!important',
                 position: 'absolute',
-                left: '0',
-                right: '0'
+                right: '0!important',
+                maxWidth: '100%',
+                maxHeight: '100%',
+                fontFamily: 'FMTS !important',  // Добавление !important
+                '& *': {
+                  fontFamily: 'FMTS !important',  // Применение ко всем дочерним элементам
+                },
               },
             }}>
 							{menuItems.map((item, index) => (
