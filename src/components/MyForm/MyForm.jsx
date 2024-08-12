@@ -34,7 +34,7 @@ const MyForm = () => {
       }}
     >
       {() => (
-        <Form>
+        <Form  id="form">
           <Box sx={{ maxWidth: 500, margin: '0 auto', padding: 2 }}>
             {/* Форма */}
             <Typography variant="h4" gutterBottom>
@@ -100,7 +100,7 @@ const MyForm = () => {
             </Button>
 
             {/* Блок соціальних мереж */}
-            <Box sx={{ marginTop: 4, textAlign: 'center' }}>
+            <Box sx={{ marginTop: 4, textAlign: 'center' }} id="social">
               <Typography variant="h6" gutterBottom>
                 Our Social Networks
               </Typography>

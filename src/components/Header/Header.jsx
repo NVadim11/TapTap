@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-scroll'; 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -14,27 +15,34 @@ import { useTheme } from '@mui/material/styles';
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 
-	const handleMenuOpen = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+    setMenuOpen(true);
+  };
 
-	const handleMenuClose = () => {
-		setAnchorEl(null);
-	};
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    setMenuOpen(false);
+  };
+
+  const handleMenuItemClick = () => {
+    handleMenuClose(); // Close the menu on item click
+  };
 
 	const isMenuOpen = Boolean(anchorEl);
 
-	const menuItems = [
-		'Why Now',
-		'Our Projects',
-		'How it Works',
-		'Our Goals',
-		'Work with Us',
-		'Our Social Network',
-	];
+  const menuItems = [
+    { name: 'Why Now', id: 'cover' },
+    { name: 'Our Projects', id: 'projects' },
+    { name: 'How it Works', id: 'about' },
+    { name: 'Our Goals', id: 'goals' },
+    { name: 'Work with Us', id: 'form' },
+    { name: 'Our Social Network', id: 'social' },
+  ];
 
 	const navBtns = {
 		padding: '8px 16px',
@@ -87,10 +95,16 @@ const Header = () => {
 						}}
 					>
 						{menuItems.map((item, index) => (
-							<Button key={index} color='inherit' sx={navBtns}>
-								{item}
-							</Button>
-						))}
+              <Button key={index} color='inherit' sx={navBtns}>
+                <Link
+                  to={item.id}
+                  smooth="easeInQuad"
+                  duration={2000}
+                >
+                  {item.name}
+                </Link>
+              </Button>
+            ))}
 					</Box>
 				)}
 
@@ -161,10 +175,19 @@ const Header = () => {
               },
             }}>
 							{menuItems.map((item, index) => (
-								<MenuItem key={index} onClick={handleMenuClose}>
-									{item}
-								</MenuItem>
-							))}
+                <MenuItem 
+                  key={index} 
+                  onClick={() => {
+                    handleMenuItemClick();
+                    // Smooth scroll to the section
+                    document.querySelector(`#${item.id}`).scrollIntoView({
+                      behavior: 'smooth'
+                    });
+                  }}
+                >
+                  {item.name}
+                </MenuItem>
+              ))}
 						</Menu>
 					</>
 				)}
