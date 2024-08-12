@@ -15,7 +15,7 @@ import { useTheme } from '@mui/material/styles';
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
-  const [ssetMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 
