@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { useTheme, useMediaQuery } from '@mui/material';
+import Icons from '../Icons/Icons.jsx';
 import coverImg from '../../img/cover-img.png';
 
 const Cover = () => {
@@ -13,7 +14,11 @@ const Cover = () => {
         left: isMobile ? '-16px' : '-66px', 
         width: '100%',
         height: '100%',
-      };
+        opacity: '0.5'
+    };
+    const macroChip = {
+        position: 'absolute'
+    }
   return (
     <Box
       id='cover'
@@ -29,6 +34,9 @@ const Cover = () => {
       }}
     >
       <img src={coverImg} alt="Cover" style={coverStyles} />
+      <div style={macroChip} >
+        <Icons.MacroChip />
+      </div>
       <Box sx={{
         position: 'relative',
         zIndex: 1,

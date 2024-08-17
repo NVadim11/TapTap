@@ -44,11 +44,15 @@ const Header = () => {
     { name: 'Our Social Network', id: 'social' },
   ];
 
-	const navBtns = {
-		padding: '8px 16px',
-		fontSize: '16px',
-		textTransform: 'initial',
-	};
+  const navBtns = {
+    padding: '8px 16px',
+    fontSize: '16px',
+    textTransform: 'initial',
+    transition: 'opacity 0.25s ease-in-out',
+    '&:hover': {
+      opacity: 0.8,
+    },
+  };
 
 	return (
 		<AppBar
@@ -123,7 +127,11 @@ const Header = () => {
             lineHeight: '100%',
             textAlign: 'center',
             color: '#fff',
-            marginRight: isMobile? '13px' : "0"
+            marginRight: isMobile? '13px' : "0",
+            transition: 'opacity 0.25s ease-in-out',
+            '&:hover': {
+              opacity: 0.8,
+            },
 					}}
 				>
 					Book A Call

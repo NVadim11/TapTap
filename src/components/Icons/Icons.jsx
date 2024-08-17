@@ -35,11 +35,113 @@ const Hamburger = () => {
     );
 }
 
+const MacroChip = () => {
+    return (
+        <svg width="569" height="453" viewBox="0 0 569 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.12">
+    <g filter="url(#filter0_bi_1648_1693)">
+      <path d="M260.357 131.834C287.263 123.806 316.379 128.915 338.945 145.624L520.254 279.87C537.63 292.735 532.86 319.917 512.142 326.098L295.96 390.597C269.054 398.625 239.938 393.516 217.372 376.808L36.0637 242.562C18.6875 229.696 23.4569 202.515 44.1752 196.333L260.357 131.834Z" fill="#E4E8F3" fill-opacity="0.4" />
+    </g>
+    <g filter="url(#filter1_bi_1648_1693)">
+      <path d="M25.834 216.941L23.5667 229.862C21.9703 239.029 25.125 249.024 33.8023 255.449L214.657 392.279C237.223 408.988 266.339 414.097 293.246 406.069L509.881 338.985C520.227 335.899 526.596 327.575 528.216 318.412L530.473 305.547C528.847 314.701 522.48 323.014 512.142 326.098L295.96 390.597C269.054 398.625 239.938 393.516 217.372 376.808L36.0636 242.562C27.3755 236.129 24.2239 226.117 25.834 216.941Z" fill="#E4E8F3" fill-opacity="0.4" />
+    </g>
+    <g filter="url(#filter2_f_1648_1693)">
+      <path d="M295.961 390.598L512.142 326.098C521.573 323.285 527.699 316.12 529.936 307.935C521.955 319.969 519.455 320.342 511.503 323.362L296.016 386.669C289.926 388.207 273.428 392.088 254.751 388.811C236.073 385.534 222.954 376.456 218.412 373.052C160.318 329.969 42.1063 244.167 36.5448 239.822C30.9833 235.477 26.8656 227.158 25.5019 223.542C26.0274 230.659 29.4334 237.653 36.0639 242.562L217.372 376.808C239.938 393.516 269.054 398.625 295.961 390.598Z" fill="url(#paint0_linear_1648_1693)" />
+    </g>
+  </g>
+  <g opacity="0.52">
+    <g filter="url(#filter3_bi_1648_1693)">
+      <path d="M275.303 46.6557C302.21 38.628 331.325 43.7368 353.892 60.4454L535.2 194.691C552.576 207.557 547.807 234.738 527.088 240.92L310.907 305.419C284 313.447 254.884 308.338 232.318 291.629L51.0099 157.383C33.6338 144.518 38.4032 117.336 59.1215 111.155L275.303 46.6557Z" fill="#E4E8F3" fill-opacity="0.4" />
+    </g>
+    <g filter="url(#filter4_bi_1648_1693)">
+      <path d="M40.7812 131.763L38.514 144.684C36.9176 153.851 40.0722 163.846 48.7495 170.271L229.604 307.101C252.171 323.809 281.286 328.918 308.193 320.89L524.828 253.807C535.174 250.72 541.543 242.396 543.163 233.233L545.421 220.368C543.794 229.522 537.427 237.835 527.089 240.92L310.908 305.419C284.001 313.447 254.885 308.338 232.319 291.629L51.0109 157.384C42.3228 150.951 39.1711 140.939 40.7812 131.763Z" fill="#E4E8F3" fill-opacity="0.4" />
+    </g>
+    <g filter="url(#filter5_f_1648_1693)">
+      <path d="M310.906 305.419L527.088 240.92C536.518 238.106 542.644 230.941 544.882 222.756C536.9 234.79 534.4 235.163 526.448 238.183L310.961 301.49C304.872 303.029 288.373 306.91 269.696 303.632C251.019 300.355 237.899 291.277 233.357 287.873C175.263 244.79 57.0515 158.988 51.49 154.643C45.9285 150.298 41.8107 141.98 40.447 138.364C40.9726 145.48 44.3785 152.474 51.0091 157.383L232.317 291.629C254.884 308.338 283.999 313.447 310.906 305.419Z" fill="url(#paint1_linear_1648_1693)" />
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_bi_1648_1693" x="5.42944" y="108.11" width="545.458" height="306.212" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feGaussianBlur in="BackgroundImageFix" stdDeviation="10" />
+      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1648_1693" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1648_1693" result="shape" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="0.5" />
+      <feGaussianBlur stdDeviation="0.5" />
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.342674 0 0 0 0 0.352133 0 0 0 0 0.579167 0 0 0 0.1 0" />
+      <feBlend mode="darken" in2="shape" result="effect2_innerShadow_1648_1693" />
+    </filter>
+    <filter id="filter1_bi_1648_1693" x="3.16797" y="196.941" width="547.305" height="232.852" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feGaussianBlur in="BackgroundImageFix" stdDeviation="10" />
+      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1648_1693" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1648_1693" result="shape" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="-0.5" />
+      <feGaussianBlur stdDeviation="0.5" />
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.341176 0 0 0 0 0.352941 0 0 0 0 0.580392 0 0 0 0.25 0" />
+      <feBlend mode="darken" in2="shape" result="effect2_innerShadow_1648_1693" />
+    </filter>
+    <filter id="filter2_f_1648_1693" x="24.5018" y="222.542" width="506.435" height="172.779" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="0.5" result="effect1_foregroundBlur_1648_1693" />
+    </filter>
+    <filter id="filter3_bi_1648_1693" x="20.3757" y="22.9314" width="545.458" height="306.212" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feGaussianBlur in="BackgroundImageFix" stdDeviation="10" />
+      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1648_1693" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1648_1693" result="shape" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="0.5" />
+      <feGaussianBlur stdDeviation="0.5" />
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.342674 0 0 0 0 0.352133 0 0 0 0 0.579167 0 0 0 0.1 0" />
+      <feBlend mode="darken" in2="shape" result="effect2_innerShadow_1648_1693" />
+    </filter>
+    <filter id="filter4_bi_1648_1693" x="18.1152" y="111.763" width="547.305" height="232.852" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feGaussianBlur in="BackgroundImageFix" stdDeviation="10" />
+      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1648_1693" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1648_1693" result="shape" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="-0.5" />
+      <feGaussianBlur stdDeviation="0.5" />
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.341176 0 0 0 0 0.352941 0 0 0 0 0.580392 0 0 0 0.25 0" />
+      <feBlend mode="darken" in2="shape" result="effect2_innerShadow_1648_1693" />
+    </filter>
+    <filter id="filter5_f_1648_1693" x="39.447" y="137.364" width="506.435" height="172.779" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="0.5" result="effect1_foregroundBlur_1648_1693" />
+    </filter>
+    <linearGradient id="paint0_linear_1648_1693" x1="26.2031" y1="219.546" x2="529.937" y2="307.935" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.24" />
+      <stop offset="0.130208" stop-color="white" stop-opacity="0.865636" />
+      <stop offset="0.489583" stop-color="white" stop-opacity="0.494792" />
+      <stop offset="1" stop-color="white" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="paint1_linear_1648_1693" x1="41.1483" y1="134.367" x2="544.882" y2="222.756" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.24" />
+      <stop offset="0.130208" stop-color="white" stop-opacity="0.865636" />
+      <stop offset="0.489583" stop-color="white" stop-opacity="0.494792" />
+      <stop offset="1" stop-color="white" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+</svg>
+    );
+}
+
 const Icons = {
     Facebook,
     TG,
     Discord,
-    Hamburger
+    Hamburger,
+    MacroChip
 }
 
 export default Icons;
