@@ -1,8 +1,8 @@
 import React from 'react';
 
 const About = () => {
-    return (
-        <>
+	return (
+		<>
 			<div id='about'>
 				<div>
 					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -71,7 +71,7 @@ const About = () => {
 				</div>
 			</div>
 		</>
-    );
-}
+	);
+};
 
 export default About;

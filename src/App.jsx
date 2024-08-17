@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './components/Header/Header.jsx';
@@ -8,6 +9,7 @@ import About from './components/About/About.jsx';
 import Goals from './components/Goals/Goals.jsx';
 import MyForm from './components/MyForm/MyForm.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import Policy from './components/Policy/Policy.jsx'; // Import the Policy component
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -25,20 +27,33 @@ function App() {
 			once: true,
 		});
 	}, []);
+
 	return (
-		<ThemeProvider theme={theme}>
-			<div className='wrapper'>
-				<Header />
-				<div className='main'>
-					<Cover />
-					<Projects />
-					<About />
-					<Goals />
-					<MyForm />
+		<Router>
+			<ThemeProvider theme={theme}>
+				<div className='wrapper'>
+					<Header />
+					<div className='main'>
+						<Routes>
+							<Route
+								path='/'
+								element={
+									<>
+										<Cover />
+										<Projects />
+										<About />
+										<Goals />
+										<MyForm />
+									</>
+								}
+							/>
+							<Route path='/policy' element={<Policy />} />
+						</Routes>
+					</div>
+					<Footer />
 				</div>
-				<Footer />
-			</div>
-		</ThemeProvider>
+			</ThemeProvider>
+		</Router>
 	);
 }
 

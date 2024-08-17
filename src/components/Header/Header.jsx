@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll'; 
+import { Link } from 'react-scroll';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -15,44 +15,44 @@ import { useTheme } from '@mui/material/styles';
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-    setMenuOpen(true);
-  };
+	const handleMenuOpen = (event) => {
+		setAnchorEl(event.currentTarget);
+		setMenuOpen(true);
+	};
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setMenuOpen(false);
-  };
+	const handleMenuClose = () => {
+		setAnchorEl(null);
+		setMenuOpen(false);
+	};
 
-  const handleMenuItemClick = () => {
-    handleMenuClose(); // Close the menu on item click
-  };
+	const handleMenuItemClick = () => {
+		handleMenuClose(); // Close the menu on item click
+	};
 
 	const isMenuOpen = Boolean(anchorEl);
 
-  const menuItems = [
-    { name: 'Why Now', id: 'cover' },
-    { name: 'Our Projects', id: 'projects' },
-    { name: 'How it Works', id: 'about' },
-    { name: 'Our Goals', id: 'goals' },
-    { name: 'Work with Us', id: 'form' },
-    { name: 'Our Social Network', id: 'social' },
-  ];
+	const menuItems = [
+		{ name: 'Why Now', id: 'cover' },
+		{ name: 'Our Projects', id: 'projects' },
+		{ name: 'How it Works', id: 'about' },
+		{ name: 'Our Goals', id: 'goals' },
+		{ name: 'Work with Us', id: 'form' },
+		{ name: 'Our Social Network', id: 'social' },
+	];
 
-  const navBtns = {
-    padding: '8px 16px',
-    fontSize: '16px',
-    textTransform: 'initial',
-    transition: 'opacity 0.25s ease-in-out',
-    '&:hover': {
-      opacity: 0.8,
-    },
-  };
+	const navBtns = {
+		padding: '8px 16px',
+		fontSize: '16px',
+		textTransform: 'initial',
+		transition: 'opacity 0.25s ease-in-out',
+		'&:hover': {
+			opacity: 0.8,
+		},
+	};
 
 	return (
 		<AppBar
@@ -99,16 +99,12 @@ const Header = () => {
 						}}
 					>
 						{menuItems.map((item, index) => (
-              <Button key={index} color='inherit' sx={navBtns}>
-                <Link
-                  to={item.id}
-                  smooth="easeInQuad"
-                  duration={2000}
-                >
-                  {item.name}
-                </Link>
-              </Button>
-            ))}
+							<Button key={index} color='inherit' sx={navBtns}>
+								<Link to={item.id} smooth='easeInQuad' duration={2000}>
+									{item.name}
+								</Link>
+							</Button>
+						))}
 					</Box>
 				)}
 
@@ -117,21 +113,21 @@ const Header = () => {
 					sx={{
 						border: '2px solid #c8ff80',
 						borderRadius: '44px',
-            padding: '0 21px',
-            display: 'flex',
-            alignItems: 'center',
+						padding: '0 21px',
+						display: 'flex',
+						alignItems: 'center',
 						height: '58px',
 						textTransform: 'uppercase',
-            fontWeight: '700',
-            fontSize: '16px',
-            lineHeight: '100%',
-            textAlign: 'center',
-            color: '#fff',
-            marginRight: isMobile? '13px' : "0",
-            transition: 'opacity 0.25s ease-in-out',
-            '&:hover': {
-              opacity: 0.8,
-            },
+						fontWeight: '700',
+						fontSize: '16px',
+						lineHeight: '100%',
+						textAlign: 'center',
+						color: '#fff',
+						marginRight: isMobile ? '13px' : '0',
+						transition: 'opacity 0.25s ease-in-out',
+						'&:hover': {
+							opacity: 0.8,
+						},
 					}}
 				>
 					Book A Call
@@ -147,55 +143,59 @@ const Header = () => {
 						>
 							{isMenuOpen ? <CloseIcon /> : <Icons.Hamburger />}
 						</IconButton>
-						<Menu anchorEl={anchorEl} open={isMenuOpen} onClose={handleMenuClose}
-            PaperProps={{
-              sx: {
-                width: '100%',
-                left: '0!important',
-                height: '100%!important',
-                borderRadius: '24px 24px 0 0',
-                background: 'linear-gradient(314deg, #d1f0e2 43.89%, #a4b8fe 100%)',
-                top: '80px!important',
-                bottom: '0!important',
-                position: 'absolute',
-                right: '0!important',
-                maxWidth: '100%',
-                maxHeight: '100%',
-                fontFamily: 'FMTS !important', 
-                '& *': {
-                  fontFamily: 'FMTS !important', 
-                },
-                '& ul': {
-                  padding: '31px 0 0 0', 
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px'
-                },
-                '& li': {
-                  padding: '0 16px',
-                  height: '52px',
-                  fontWeight: 700,
-                  fontSize: '24px',
-                  lineHeight: '133%',
-                  textAlign: 'center',
-                  color: '#0e0b3d',
-                }
-              },
-            }}>
+						<Menu
+							anchorEl={anchorEl}
+							open={isMenuOpen}
+							onClose={handleMenuClose}
+							PaperProps={{
+								sx: {
+									width: '100%',
+									left: '0!important',
+									height: '100%!important',
+									borderRadius: '24px 24px 0 0',
+									background: 'linear-gradient(314deg, #d1f0e2 43.89%, #a4b8fe 100%)',
+									top: '80px!important',
+									bottom: '0!important',
+									position: 'absolute',
+									right: '0!important',
+									maxWidth: '100%',
+									maxHeight: '100%',
+									fontFamily: 'FMTS !important',
+									'& *': {
+										fontFamily: 'FMTS !important',
+									},
+									'& ul': {
+										padding: '31px 0 0 0',
+										display: 'flex',
+										flexDirection: 'column',
+										gap: '12px',
+									},
+									'& li': {
+										padding: '0 16px',
+										height: '52px',
+										fontWeight: 700,
+										fontSize: '24px',
+										lineHeight: '133%',
+										textAlign: 'center',
+										color: '#0e0b3d',
+									},
+								},
+							}}
+						>
 							{menuItems.map((item, index) => (
-                <MenuItem 
-                  key={index} 
-                  onClick={() => {
-                    handleMenuItemClick();
-                    // Smooth scroll to the section
-                    document.querySelector(`#${item.id}`).scrollIntoView({
-                      behavior: 'smooth'
-                    });
-                  }}
-                >
-                  {item.name}
-                </MenuItem>
-              ))}
+								<MenuItem
+									key={index}
+									onClick={() => {
+										handleMenuItemClick();
+										// Smooth scroll to the section
+										document.querySelector(`#${item.id}`).scrollIntoView({
+											behavior: 'smooth',
+										});
+									}}
+								>
+									{item.name}
+								</MenuItem>
+							))}
 						</Menu>
 					</>
 				)}
