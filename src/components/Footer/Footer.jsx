@@ -7,12 +7,12 @@ const Footer = () => {
 	const navigate = useNavigate();
 
 	const handleNavigation = (id) => {
-		navigate('/'); // Navigate to the homepage
+		navigate('/');
 		setTimeout(() => {
 			document.querySelector(`#${id}`).scrollIntoView({
 				behavior: 'smooth',
 			});
-		}, 100); // Slight delay to ensure the page is fully loaded
+		}, 100);
 	};
 
 	const menuItems = [
@@ -22,7 +22,7 @@ const Footer = () => {
 		{ name: 'Our Goals', id: 'goals' },
 		{ name: 'Work with Us', id: 'form' },
 		{ name: 'Our Social Network', id: 'social' },
-		{ name: 'Policy', id: 'policy' }, // Redirect to Policy Page
+		{ name: 'Policy', id: 'policy' },
 	];
 
 	return (
