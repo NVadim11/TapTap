@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'; // Импорт useEffect
+import React, { useEffect } from 'react';
 import './App.scss';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Typography } from '@mui/material';
 import Header from './components/Header/Header.jsx';
 import Cover from './components/Cover/Cover.jsx';
 import Projects from './components/Projects/Projects.jsx';
