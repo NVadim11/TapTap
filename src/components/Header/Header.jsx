@@ -115,7 +115,7 @@ const Header = () => {
 				<Button
 					color='inherit'
 					sx={{
-						border: '1.50px solid #c8ff80',
+						border: '2px solid #c8ff80',
 						borderRadius: '44px',
             padding: '0 21px',
             display: 'flex',

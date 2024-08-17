@@ -77,6 +77,7 @@ const Cover = () => {
 					height: '100vh',
 					textAlign: 'center',
 					color: '#fff',
+					maxWidth: '1066px',
 				}}
 			>
 				<Typography
@@ -103,30 +104,51 @@ const Cover = () => {
 				>
 					All-in-One Hub for Launching and Boosting Your Projects on Telegram!
 				</Typography>
-				<Button
-					variant='contained'
-					color='primary'
-					sx={{
-						borderRadius: '44px',
-						display: 'flex',
-						alignItems: 'center',
-						height: '58px',
-						padding: '27.5px',
-						textTransform: 'uppercase',
-						background: '#c8ff80',
-					}}
-				>
-					<Typography
-						sx={{
-							fontWeight: '700',
-							fontSize: '16px',
-							lineHeight: '100%',
-							color: '#0e0b3d',
-						}}
-					>
-						Book a Discovery Call
-					</Typography>
-				</Button>
+        <Button
+  variant='contained'
+  color='primary'
+  sx={{
+    borderRadius: '44px',
+    display: 'flex',
+    alignItems: 'center',
+    height: '58px',
+    padding: '27.5px',
+    textTransform: 'uppercase',
+    background: '#c8ff80',
+    transition: 'background-color 0.25s ease', // Плавный переход для фона кнопки
+    '&:hover': {
+      backgroundColor: 'primary.main', // Используем цвет фона MUI по умолчанию
+      '& .text': {
+        color: '#ffffff', // Изменяем цвет текста на белый при ховере
+      },
+    },
+  }}
+>
+  <Typography
+    className="text"
+    sx={{
+      fontWeight: '700',
+      fontSize: '16px',
+      lineHeight: '100%',
+      color: '#0e0b3d',
+      display: 'flex',
+      alignItems: 'center',
+      transition: 'background-color 0.25s ease', // Плавный переход для фона кнопки
+    }}
+  >
+    Book a Discovery Call
+    <Box
+      sx={{
+        marginLeft: '17px',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Icons.Rocket />
+    </Box>
+  </Typography>
+</Button>
+
 			</Box>
 		</Box>
 	);
