@@ -8,6 +8,12 @@ import tomoImg from '../../img/tomo.png';
 import tomoMob from '../../img/tomoMob.png';
 import benImg from '../../img/benDog.png';
 import benMob from '../../img/benMob.png';
+import ghostImg from '../../img/ghost.png';
+import ghostMob from '../../img/ghostMob.png';
+import tigerImg from '../../img/tiger.png';
+import tigerMob from '../../img/tigerMob.png';
+import shitImg from '../../img/shit.png';
+import shitMob from '../../img/shitMob.png';
 
 const Projects = () => {
 	const theme = useTheme();
@@ -177,6 +183,110 @@ const Projects = () => {
 				<Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
 					<Box
 						sx={{
+							background: 'linear-gradient(320deg, #6462f1 27.09%, #aaa9ff 100%)',
+							borderRadius: '24px 24px 24px 0',
+							boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+							width: isMobile ? '100%' : '1340px',
+							display: 'flex',
+							flexDirection: isMobile ? 'column' : 'row',
+							padding: isMobile ? '24px' : '50px 50px 50px 90px',
+							gap: isMobile ? '22px' : '50px',
+							alignItems: isMobile ? 'center' : 'flex-start',
+						}}
+					>
+						<Box
+							sx={{
+								flex: 1,
+								textAlign: isMobile ? 'center' : 'left',
+								order: isMobile ? '0' : '2',
+								color: '#fff',
+							}}
+						>
+							<Typography variant='h2'>Ghostdrive</Typography>
+							<Typography variant='body1' style={{ marginTop: '16px' }}>
+								Experience a new way to store and transform your raw data into smart data.
+							</Typography>
+							<Typography variant='body1' style={{ marginTop: '16px' }}>
+								Community rewards: Upload files to earn points, climb the leaderboard, and
+								boost your rewards with our exciting tp game.
+							</Typography>
+							{!isMobile && (
+								<Box sx={{ display: 'flex', gap: 2, marginTop: '28px' }}>
+									<ButtonBase
+										component='a'
+										href='https://www.facebook.com'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.Facebook />
+									</ButtonBase>
+									<ButtonBase
+										component='a'
+										href='https://t.me'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.TG />
+									</ButtonBase>
+									<ButtonBase
+										component='a'
+										href='https://discord.com'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.Discord />
+									</ButtonBase>
+								</Box>
+							)}
+						</Box>
+						<Box sx={{ flex: 1, textAlign: 'center', order: isMobile ? '0' : '1' }}>
+							<img
+								src={isMobile ? ghostMob : ghostImg}
+								alt='Tap Swap'
+								style={{ width: '100%', borderRadius: '16px' }}
+							/>
+						</Box>
+						{isMobile && (
+							<Box sx={{ display: 'flex', gap: 2, marginTop: '24px' }}>
+								<ButtonBase
+									component='a'
+									href='https://www.facebook.com'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.Facebook />
+								</ButtonBase>
+								<ButtonBase
+									component='a'
+									href='https://t.me'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.TG />
+								</ButtonBase>
+								<ButtonBase
+									component='a'
+									href='https://discord.com'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.Discord />
+								</ButtonBase>
+							</Box>
+						)}
+					</Box>
+				</Grid>
+			</Grid>
+			<Grid container sx={{ marginTop: '30px' }}>
+				<Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
+					<Box
+						sx={{
 							background: 'linear-gradient(91deg, #c7acff 0%, #fff 87.06%)',
 							borderRadius: '24px 24px 0 24px',
 							boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -273,6 +383,111 @@ const Projects = () => {
 				<Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
 					<Box
 						sx={{
+							background: 'linear-gradient(314deg, #d1f0e2 43.89%, #a4b8fe 100%)',
+							borderRadius: '24px 24px 24px 0',
+							boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+							width: isMobile ? '100%' : '1340px',
+							display: 'flex',
+							flexDirection: isMobile ? 'column' : 'row',
+							padding: isMobile ? '24px' : '50px 50px 50px 90px',
+							gap: isMobile ? '22px' : '50px',
+							alignItems: isMobile ? 'center' : 'flex-start',
+						}}
+					>
+						<Box
+							sx={{
+								flex: 1,
+								textAlign: isMobile ? 'center' : 'left',
+								order: isMobile ? '0' : '2',
+							}}
+						>
+							<Typography variant='h2'>Tiger</Typography>
+							<Typography variant='body1' style={{ marginTop: '16px' }}>
+								Hey hustlers, no need to look for new side hustles anymore because $TEMA
+								is here. 
+								<br />
+								$TEMA
+								<br />
+								Hit the button, complete tasks, and watch the cash flow in, you can even
+								start picking up a color of your new BMW, bro
+							</Typography>
+							{!isMobile && (
+								<Box sx={{ display: 'flex', gap: 2, marginTop: '28px' }}>
+									<ButtonBase
+										component='a'
+										href='https://www.facebook.com'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.Facebook />
+									</ButtonBase>
+									<ButtonBase
+										component='a'
+										href='https://t.me'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.TG />
+									</ButtonBase>
+									<ButtonBase
+										component='a'
+										href='https://discord.com'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.Discord />
+									</ButtonBase>
+								</Box>
+							)}
+						</Box>
+						<Box sx={{ flex: 1, textAlign: 'center', order: isMobile ? '0' : '1' }}>
+							<img
+								src={isMobile ? tigerMob : tigerImg}
+								alt='Tap Swap'
+								style={{ width: '100%', borderRadius: '16px' }}
+							/>
+						</Box>
+						{isMobile && (
+							<Box sx={{ display: 'flex', gap: 2, marginTop: '24px' }}>
+								<ButtonBase
+									component='a'
+									href='https://www.facebook.com'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.Facebook />
+								</ButtonBase>
+								<ButtonBase
+									component='a'
+									href='https://t.me'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.TG />
+								</ButtonBase>
+								<ButtonBase
+									component='a'
+									href='https://discord.com'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.Discord />
+								</ButtonBase>
+							</Box>
+						)}
+					</Box>
+				</Grid>
+			</Grid>
+			<Grid container sx={{ marginTop: '30px' }}>
+				<Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
+					<Box
+						sx={{
 							background: 'linear-gradient(320deg, #6462f1 27.09%, #aaa9ff 100%)',
 							borderRadius: '24px 24px 0 24px',
 							boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -284,7 +499,7 @@ const Projects = () => {
 							alignItems: isMobile ? 'center' : 'flex-start',
 						}}
 					>
-						<Box sx={{ flex: 1, textAlign: isMobile ? 'center' : 'left' }}>
+						<Box sx={{ flex: 1, textAlign: isMobile ? 'center' : 'left', color: '#fff' }}>
 							<Typography variant='h2'>BenDog</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px' }}>
 								I'm Ben, a successful dog.
@@ -329,6 +544,108 @@ const Projects = () => {
 						<Box sx={{ flex: 1, textAlign: 'center' }}>
 							<img
 								src={isMobile ? benMob : benImg}
+								alt='Tap Swap'
+								style={{ width: '100%', borderRadius: '16px' }}
+							/>
+						</Box>
+						{isMobile && (
+							<Box sx={{ display: 'flex', gap: 2, marginTop: '24px' }}>
+								<ButtonBase
+									component='a'
+									href='https://www.facebook.com'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.Facebook />
+								</ButtonBase>
+								<ButtonBase
+									component='a'
+									href='https://t.me'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.TG />
+								</ButtonBase>
+								<ButtonBase
+									component='a'
+									href='https://discord.com'
+									target='_blank'
+									color='primary'
+									sx={iconButtonStyles}
+								>
+									<Icons.Discord />
+								</ButtonBase>
+							</Box>
+						)}
+					</Box>
+				</Grid>
+			</Grid>
+			<Grid container sx={{ marginTop: '30px' }}>
+				<Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
+					<Box
+						sx={{
+							background: 'linear-gradient(91deg, #c7acff 0%, #fff 87.06%)',
+							borderRadius: '24px 24px 24px 0',
+							boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+							width: isMobile ? '100%' : '1340px',
+							display: 'flex',
+							flexDirection: isMobile ? 'column' : 'row',
+							padding: isMobile ? '24px' : '50px 50px 50px 90px',
+							gap: isMobile ? '22px' : '50px',
+							alignItems: isMobile ? 'center' : 'flex-start',
+						}}
+					>
+						<Box
+							sx={{
+								flex: 1,
+								textAlign: isMobile ? 'center' : 'left',
+								order: isMobile ? '0' : '2',
+							}}
+						>
+							<Typography variant='h2'>The $hit</Typography>
+							<Typography variant='body1' style={{ marginTop: '16px' }}>
+								Welcome aboard!  The $HIT is ready for launch!  Hit that button, complete
+								tasks, and grab your rewards. You're here to experience something new.
+								Invite friends, tackle challenges, vote, claim Airdrops, and rise to the
+								top! 
+							</Typography>
+							{!isMobile && (
+								<Box sx={{ display: 'flex', gap: 2, marginTop: '28px' }}>
+									<ButtonBase
+										component='a'
+										href='https://www.facebook.com'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.Facebook />
+									</ButtonBase>
+									<ButtonBase
+										component='a'
+										href='https://t.me'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.TG />
+									</ButtonBase>
+									<ButtonBase
+										component='a'
+										href='https://discord.com'
+										target='_blank'
+										color='primary'
+										sx={iconButtonStyles}
+									>
+										<Icons.Discord />
+									</ButtonBase>
+								</Box>
+							)}
+						</Box>
+						<Box sx={{ flex: 1, textAlign: 'center', order: isMobile ? '0' : '1' }}>
+							<img
+								src={isMobile ? shitMob : shitImg}
 								alt='Tap Swap'
 								style={{ width: '100%', borderRadius: '16px' }}
 							/>
