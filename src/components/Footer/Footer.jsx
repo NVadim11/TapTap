@@ -25,6 +25,12 @@ const Footer = () => {
 		{ name: 'Policy', id: 'policy' },
 	];
 
+	const linkStyles = {
+		cursor: 'pointer',
+		color: 'inherit',
+		textDecoration: 'none',
+	};
+
 	return (
 		<Box
 			component='footer'
@@ -44,11 +50,7 @@ const Footer = () => {
 								smooth={true}
 								duration={2000}
 								onClick={() => navigate('/policy')}
-								style={{
-									cursor: 'pointer',
-									color: 'inherit',
-									textDecoration: 'none',
-								}}
+								style={linkStyles}
 							>
 								{item.name}
 							</ScrollLink>
@@ -58,11 +60,7 @@ const Footer = () => {
 								smooth={true}
 								duration={2000}
 								onClick={() => handleNavigation(item.id)}
-								style={{
-									cursor: 'pointer',
-									color: 'inherit',
-									textDecoration: 'none',
-								}}
+								style={linkStyles}
 							>
 								{item.name}
 							</ScrollLink>

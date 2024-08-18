@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,12 +12,25 @@ import Box from '@mui/material/Box';
 import Icons from '../Icons/Icons.jsx';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [menuOpen, setMenuOpen] = useState(false);
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	useEffect(() => {
+		const hash = location.hash;
+		if (hash) {
+			const element = document.querySelector(hash);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' });
+			}
+		}
+	}, [location]);
 
 	const handleMenuOpen = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -30,7 +43,11 @@ const Header = () => {
 	};
 
 	const handleMenuItemClick = () => {
-		handleMenuClose(); // Close the menu on item click
+		handleMenuClose();
+	};
+
+	const handleNavigation = (id) => {
+		navigate(`/#${id}`);
 	};
 
 	const isMenuOpen = Boolean(anchorEl);
@@ -83,7 +100,9 @@ const Header = () => {
 						letterSpacing: '-0.06em',
 						color: '#fff',
 						width: 'auto',
+						cursor: 'pointer',
 					}}
+					onClick={() => handleNavigation('cover')}
 				>
 					TapTap
 				</Typography>
@@ -99,10 +118,13 @@ const Header = () => {
 						}}
 					>
 						{menuItems.map((item, index) => (
-							<Button key={index} color='inherit' sx={navBtns}>
-								<Link to={item.id} smooth='easeInQuad' duration={2000}>
-									{item.name}
-								</Link>
+							<Button
+								key={index}
+								color='inherit'
+								sx={navBtns}
+								onClick={() => handleNavigation(item.id)}
+							>
+								{item.name}
 							</Button>
 						))}
 					</Box>
@@ -187,10 +209,7 @@ const Header = () => {
 									key={index}
 									onClick={() => {
 										handleMenuItemClick();
-										// Smooth scroll to the section
-										document.querySelector(`#${item.id}`).scrollIntoView({
-											behavior: 'smooth',
-										});
+										handleNavigation(item.id);
 									}}
 								>
 									{item.name}
