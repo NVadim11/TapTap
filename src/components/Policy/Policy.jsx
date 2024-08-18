@@ -80,7 +80,7 @@ const Policy = () => {
 	};
 
 	return (
-		<Container sx={{ padding: '0px' }}>
+		<Container sx={{ padding: '0px 16px' }}>
 			<Box>
 				<img src={blueCover} alt='Blue Cover' style={blueCoverStyles} />
 				<Box my={4} sx={{ position: 'relative', zIndex: 1 }}>

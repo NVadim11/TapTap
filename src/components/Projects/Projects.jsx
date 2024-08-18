@@ -41,13 +41,9 @@ const Projects = () => {
 			sx={{
 				display: 'flex',
 				flexDirection: 'column',
-<<<<<<< Updated upstream
 				paddingBottom: isMobile ? '75px' : '107px',
-=======
-                paddingBottom: isMobile ? '75px' : '107px',
 				paddingLeft: '16px',
-				paddingRight: '16px'
->>>>>>> Stashed changes
+				paddingRight: '16px',
 			}}
 		>
 			<Typography
@@ -106,7 +102,9 @@ const Projects = () => {
 						}}
 					>
 						<Box sx={{ flex: 1, textAlign: isMobile ? 'center' : 'left' }}>
-							<Typography variant='h2' style={{fontSize: isMobile ? '32px': '44px'}}>Tap Swap</Typography>
+							<Typography variant='h2' style={{ fontSize: isMobile ? '32px' : '44px' }}>
+								Tap Swap
+							</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px', fontSize: '20px' }}>
 								TapSwap is a cutting-edge financial platform where users can earn tokens
 								by utilizing the app's various mining features. Your main goal is to
@@ -210,7 +208,9 @@ const Projects = () => {
 								color: '#fff',
 							}}
 						>
-							<Typography variant='h2' style={{fontSize: isMobile ? '32px': '44px'}}>Ghostdrive</Typography>
+							<Typography variant='h2' style={{ fontSize: isMobile ? '32px' : '44px' }}>
+								Ghostdrive
+							</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px', fontSize: '20px' }}>
 								Experience a new way to store and transform your raw data into smart data.
 							</Typography>
@@ -307,7 +307,9 @@ const Projects = () => {
 						}}
 					>
 						<Box sx={{ flex: 1, textAlign: isMobile ? 'center' : 'left' }}>
-							<Typography variant='h2' style={{fontSize: isMobile ? '32px': '44px'}}>TomoCat</Typography>
+							<Typography variant='h2' style={{ fontSize: isMobile ? '32px' : '44px' }}>
+								TomoCat
+							</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px', fontSize: '20px' }}>
 								Let me introduce myself — I’m Tomo, a stray cat. Tired and sad, I gain
 								magical powers when you take care of me. just pet me and I’ll bring your
@@ -409,7 +411,9 @@ const Projects = () => {
 								order: isMobile ? '0' : '2',
 							}}
 						>
-							<Typography variant='h2' style={{fontSize: isMobile ? '32px': '44px'}}>Tiger</Typography>
+							<Typography variant='h2' style={{ fontSize: isMobile ? '32px' : '44px' }}>
+								Tiger
+							</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px', fontSize: '20px' }}>
 								Hey hustlers, no need to look for new side hustles anymore because $TEMA
 								is here. 
@@ -508,7 +512,9 @@ const Projects = () => {
 						}}
 					>
 						<Box sx={{ flex: 1, textAlign: isMobile ? 'center' : 'left', color: '#fff' }}>
-							<Typography variant='h2' style={{fontSize: isMobile ? '32px': '44px'}}>BenDog</Typography>
+							<Typography variant='h2' style={{ fontSize: isMobile ? '32px' : '44px' }}>
+								BenDog
+							</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px' }}>
 								I'm Ben, a successful dog.
 							</Typography>
@@ -612,7 +618,9 @@ const Projects = () => {
 								order: isMobile ? '0' : '2',
 							}}
 						>
-							<Typography variant='h2' style={{fontSize: isMobile ? '32px': '44px'}}>The $hit</Typography>
+							<Typography variant='h2' style={{ fontSize: isMobile ? '32px' : '44px' }}>
+								The $hit
+							</Typography>
 							<Typography variant='body1' style={{ marginTop: '16px', fontSize: '20px' }}>
 								Welcome aboard!  The $HIT is ready for launch!  Hit that button, complete
 								tasks, and grab your rewards. You're here to experience something new.

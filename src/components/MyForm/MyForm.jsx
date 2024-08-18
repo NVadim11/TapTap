@@ -19,6 +19,7 @@ const MyForm = () => {
 			transition: '.25s',
 		},
 	};
+
 	return (
 		<Formik
 			initialValues={{
@@ -32,108 +33,259 @@ const MyForm = () => {
 			}}
 		>
 			{() => (
-				<Form id='form'>
-					<Box sx={{ maxWidth: 500, margin: '0 auto', padding: 2 }}>
-						{/* Форма */}
-						<Typography variant='h4' gutterBottom>
-							Contact Us
-						</Typography>
-						<Typography variant='body1' gutterBottom>
-							Fill in the form below to send us a message.
-						</Typography>
-
-						{/* Поле Name */}
-						<Box sx={{ marginBottom: 2 }}>
-							<Field
-								name='name'
-								as={TextField}
-								label='Name'
-								placeholder='ENTER YOUR NAME'
-								fullWidth
-								variant='outlined'
-							/>
-						</Box>
-
-						{/* Поле Email */}
-						<Box sx={{ marginBottom: 2 }}>
-							<Field
-								name='email'
-								as={TextField}
-								label='Email'
-								placeholder='ENTER YOUR EMAIL'
-								fullWidth
-								variant='outlined'
-							/>
-						</Box>
-
-						{/* Поле Phone */}
-						<Box sx={{ marginBottom: 2 }}>
-							<Field
-								name='phone'
-								as={TextField}
-								label='Phone Number'
-								placeholder='ENTER YOUR PHONE NUMBER'
-								fullWidth
-								variant='outlined'
-							/>
-						</Box>
-
-						{/* Поле Message */}
-						<Box sx={{ marginBottom: 2 }}>
-							<Field
-								name='message'
-								as={TextField}
-								label='Message'
-								placeholder='TYPE YOUR TEXT'
-								fullWidth
-								multiline
-								rows={4}
-								variant='outlined'
-							/>
-						</Box>
-
-						{/* Кнопка Send */}
-						<Button type='submit' variant='contained' color='primary' fullWidth>
-							Send
-						</Button>
-
-						{/* Блок соціальних мереж */}
-						<Box sx={{ marginTop: 4, textAlign: 'center' }} id='social'>
-							<Typography variant='h6' gutterBottom>
-								Our Social Networks
+				<>
+					<Form id='form'>
+						<Box
+							sx={{
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								borderRadius: '24px',
+								maxWidth: '865px',
+								margin: '0 auto',
+								padding: '63px 104px 56px',
+								backgroundColor: '#fff',
+							}}
+						>
+							<Typography
+								variant='h4'
+								gutterBottom
+								sx={{
+									fontWeight: 700,
+									fontSize: '74px',
+									marginBottom: '48px',
+									lineHeight: '116%',
+									letterSpacing: '-0.06em',
+									textTransform: 'capitalize',
+									textAlign: 'center',
+									color: '#000',
+								}}
+							>
+								Work with Us
 							</Typography>
-							<Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-								<ButtonBase
-									component='a'
-									href='https://www.facebook.com'
-									target='_blank'
-									color='primary'
-									sx={iconButtonStyles}
-								>
-									<Icons.Facebook />
-								</ButtonBase>
-								<ButtonBase
-									component='a'
-									href='https://t.me'
-									target='_blank'
-									color='primary'
-									sx={iconButtonStyles}
-								>
-									<Icons.TG />
-								</ButtonBase>
-								<ButtonBase
-									component='a'
-									href='https://discord.com'
-									target='_blank'
-									color='primary'
-									sx={iconButtonStyles}
-								>
-									<Icons.Discord />
-								</ButtonBase>
+							<Typography
+								variant='body1'
+								gutterBottom
+								sx={{
+									fontWeight: 400,
+									fontSize: '20px',
+									lineHeight: '160%',
+									textAlign: 'center',
+									marginBottom: '48px',
+									color: '#000',
+								}}
+							>
+								Fill in the form below to send us a message.
+							</Typography>
+
+							<Box sx={{ width: '100%', marginBottom: '47px' }}>
+								<Field
+									name='name'
+									as={TextField}
+									label='Name'
+									placeholder='ENTER YOUR NAME'
+									fullWidth
+									variant='outlined'
+									InputLabelProps={{
+										sx: {
+											fontWeight: 400,
+											fontSize: '16px',
+											lineHeight: '100%',
+											textTransform: 'uppercase',
+											color: '#0e0b3d',
+										},
+									}}
+									InputProps={{
+										sx: {
+											border: '1.50px solid #b3b8d0',
+											borderRadius: '12px',
+											'&::placeholder': {
+												fontWeight: 400,
+												fontSize: '16px',
+												lineHeight: '100%',
+												textTransform: 'uppercase',
+												textAlign: 'center',
+												color: '#b3b8d0',
+											},
+										},
+									}}
+								/>
 							</Box>
+
+							<Box sx={{ width: '100%', marginBottom: '47px' }}>
+								<Field
+									name='email'
+									as={TextField}
+									label='Email'
+									placeholder='ENTER YOUR EMAIL'
+									fullWidth
+									variant='outlined'
+									InputLabelProps={{
+										sx: {
+											fontWeight: 400,
+											fontSize: '16px',
+											lineHeight: '100%',
+											textTransform: 'uppercase',
+											color: '#0e0b3d',
+										},
+									}}
+									InputProps={{
+										sx: {
+											border: '1.50px solid #b3b8d0',
+											borderRadius: '12px',
+											'&::placeholder': {
+												fontWeight: 400,
+												fontSize: '16px',
+												lineHeight: '100%',
+												textTransform: 'uppercase',
+												textAlign: 'center',
+												color: '#b3b8d0',
+											},
+										},
+									}}
+								/>
+							</Box>
+
+							<Box sx={{ width: '100%', marginBottom: '47px' }}>
+								<Field
+									name='phone'
+									as={TextField}
+									label='Phone Number'
+									placeholder='ENTER YOUR PHONE NUMBER'
+									fullWidth
+									variant='outlined'
+									InputLabelProps={{
+										sx: {
+											fontWeight: 400,
+											fontSize: '16px',
+											lineHeight: '100%',
+											textTransform: 'uppercase',
+											color: '#0e0b3d',
+										},
+									}}
+									InputProps={{
+										sx: {
+											border: '1.50px solid #b3b8d0',
+											borderRadius: '12px',
+											'&::placeholder': {
+												fontWeight: 400,
+												fontSize: '16px',
+												lineHeight: '100%',
+												textTransform: 'uppercase',
+												textAlign: 'center',
+												color: '#b3b8d0',
+											},
+										},
+									}}
+								/>
+							</Box>
+
+							<Box sx={{ width: '100%', marginBottom: '47px' }}>
+								<Field
+									name='message'
+									as={TextField}
+									label='Message'
+									placeholder='TYPE YOUR TEXT'
+									fullWidth
+									multiline
+									rows={4}
+									variant='outlined'
+									InputLabelProps={{
+										sx: {
+											fontWeight: 400,
+											fontSize: '16px',
+											lineHeight: '100%',
+											textTransform: 'uppercase',
+											color: '#0e0b3d',
+										},
+									}}
+									InputProps={{
+										sx: {
+											border: '1.50px solid #b3b8d0',
+											borderRadius: '12px',
+											'&::placeholder': {
+												fontWeight: 400,
+												fontSize: '16px',
+												lineHeight: '100%',
+												textTransform: 'uppercase',
+												textAlign: 'center',
+												color: '#b3b8d0',
+											},
+										},
+									}}
+								/>
+							</Box>
+
+							<Button
+								type='submit'
+								variant='contained'
+								fullWidth
+								sx={{
+									borderRadius: '44px',
+									padding: '21px',
+									width: '185px',
+									fontWeight: '700',
+									fontSize: '16px',
+									lineHeight: '100%',
+									textTransform: 'uppercase',
+									textAlign: 'center',
+									color: '#0e0b3d',
+									backgroundColor: '#c8ff80',
+								}}
+							>
+								Send
+							</Button>
+						</Box>
+					</Form>
+					<Box sx={{ marginTop: 4, textAlign: 'center' }} id='social'>
+						<Typography
+							variant='h6'
+							gutterBottom
+							sx={{
+								fontWeight: 700,
+								fontSize: '44px',
+								lineHeight: '105%',
+								letterSpacing: '-0.06em',
+								textTransform: 'capitalize',
+								textAlign: 'center',
+								color: '#fff',
+								marginTop: '112px',
+								marginBottom: '24px',
+							}}
+						>
+							Our Social Networks
+						</Typography>
+						<Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+							<ButtonBase
+								component='a'
+								href='https://www.facebook.com'
+								target='_blank'
+								color='primary'
+								sx={iconButtonStyles}
+							>
+								<Icons.Facebook />
+							</ButtonBase>
+							<ButtonBase
+								component='a'
+								href='https://t.me'
+								target='_blank'
+								color='primary'
+								sx={iconButtonStyles}
+							>
+								<Icons.TG />
+							</ButtonBase>
+							<ButtonBase
+								component='a'
+								href='https://discord.com'
+								target='_blank'
+								color='primary'
+								sx={iconButtonStyles}
+							>
+								<Icons.Discord />
+							</ButtonBase>
 						</Box>
 					</Box>
-				</Form>
+				</>
 			)}
 		</Formik>
 	);
