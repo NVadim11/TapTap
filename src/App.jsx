@@ -9,7 +9,7 @@ import About from './components/About/About.jsx';
 import Goals from './components/Goals/Goals.jsx';
 import MyForm from './components/MyForm/MyForm.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import Policy from './components/Policy/Policy.jsx'; // Import the Policy component
+import Policy from './components/Policy/Policy.jsx'; 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

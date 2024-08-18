@@ -40,6 +40,7 @@ const Projects = () => {
 			sx={{
 				display: 'flex',
 				flexDirection: 'column',
+                paddingBottom: isMobile ? '75px' : '107px'
 			}}
 		>
 			<Typography
