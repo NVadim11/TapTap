@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -11,7 +11,8 @@ import Box from '@mui/material/Box';
 import Icons from '../Icons/Icons.jsx';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { scroller } from 'react-scroll';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
@@ -19,17 +20,6 @@ const Header = () => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 	const navigate = useNavigate();
-	const location = useLocation();
-
-	useEffect(() => {
-		const hash = location.hash;
-		if (hash) {
-			const element = document.querySelector(hash);
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth' });
-			}
-		}
-	}, [location]);
 
 	const handleMenuOpen = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -39,14 +29,6 @@ const Header = () => {
 	const handleMenuClose = () => {
 		setAnchorEl(null);
 		setMenuOpen(false);
-	};
-
-	const handleMenuItemClick = () => {
-		handleMenuClose();
-	};
-
-	const handleNavigation = (id) => {
-		navigate(`/#${id}`);
 	};
 
 	const isMenuOpen = Boolean(anchorEl);
@@ -68,6 +50,19 @@ const Header = () => {
 		'&:hover': {
 			opacity: 0.8,
 		},
+	};
+
+	const handleLinkClick = (id) => {
+		if (id === 'home') {
+			navigate('/');
+		} else {
+			scroller.scrollTo(id, {
+				smooth: true,
+				offset: -70,
+				duration: 2000,
+			});
+		}
+		handleMenuClose();
 	};
 
 	return (
@@ -101,7 +96,7 @@ const Header = () => {
 						width: 'auto',
 						cursor: 'pointer',
 					}}
-					onClick={() => handleNavigation('cover')}
+					onClick={() => handleLinkClick('home')}
 				>
 					TapTap
 				</Typography>
@@ -121,7 +116,7 @@ const Header = () => {
 								key={index}
 								color='inherit'
 								sx={navBtns}
-								onClick={() => handleNavigation(item.id)}
+								onClick={() => handleLinkClick(item.id)}
 							>
 								{item.name}
 							</Button>
@@ -204,14 +199,19 @@ const Header = () => {
 							}}
 						>
 							{menuItems.map((item, index) => (
-								<MenuItem
-									key={index}
-									onClick={() => {
-										handleMenuItemClick();
-										handleNavigation(item.id);
-									}}
-								>
-									{item.name}
+								<MenuItem key={index}>
+									<Button
+										onClick={() => handleLinkClick(item.id)}
+										sx={{
+											width: '100%',
+											textAlign: 'center',
+											color: '#0e0b3d',
+											fontWeight: 700,
+											fontSize: '24px',
+										}}
+									>
+										{item.name}
+									</Button>
 								</MenuItem>
 							))}
 						</Menu>

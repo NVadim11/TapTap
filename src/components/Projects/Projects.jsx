@@ -36,11 +36,12 @@ const Projects = () => {
 	};
 
 	return (
-		<Box id="projects"
+		<Box
+			id='projects'
 			sx={{
 				display: 'flex',
 				flexDirection: 'column',
-                paddingBottom: isMobile ? '75px' : '107px'
+				paddingBottom: isMobile ? '75px' : '107px',
 			}}
 		>
 			<Typography

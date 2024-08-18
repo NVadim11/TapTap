@@ -1,18 +1,28 @@
 import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
-import { Link as ScrollLink } from 'react-scroll';
+import { scroller } from 'react-scroll';
+import { useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
 
 const Footer = () => {
+	const theme = useTheme();
 	const navigate = useNavigate();
+	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 
-	const handleNavigation = (id) => {
-		navigate('/');
-		setTimeout(() => {
-			document.querySelector(`#${id}`).scrollIntoView({
-				behavior: 'smooth',
-			});
-		}, 100);
+	const handleLinkClick = (id) => {
+		if (id === 'policy') {
+			navigate('/policy');
+		} else {
+			navigate('/');
+			setTimeout(() => {
+				scroller.scrollTo(id, {
+					smooth: true,
+					duration: 2000,
+					offset: -70,
+				});
+			}, 0);
+		}
 	};
 
 	const menuItems = [
@@ -41,30 +51,17 @@ const Footer = () => {
 				textAlign: 'center',
 			}}
 		>
-			<Grid container spacing={3} justifyContent='center'>
+			<Grid
+				container
+				spacing={3}
+				justifyContent='center'
+				direction={isMobile ? 'column' : 'row'} // Switch to column on mobile
+			>
 				{menuItems.map((item, index) => (
 					<Grid item key={index}>
-						{item.id === 'policy' ? (
-							<ScrollLink
-								to={item.id}
-								smooth={true}
-								duration={2000}
-								onClick={() => navigate('/policy')}
-								style={linkStyles}
-							>
-								{item.name}
-							</ScrollLink>
-						) : (
-							<ScrollLink
-								to={item.id}
-								smooth={true}
-								duration={2000}
-								onClick={() => handleNavigation(item.id)}
-								style={linkStyles}
-							>
-								{item.name}
-							</ScrollLink>
-						)}
+						<Typography sx={linkStyles} onClick={() => handleLinkClick(item.id)}>
+							{item.name}
+						</Typography>
 					</Grid>
 				))}
 			</Grid>
