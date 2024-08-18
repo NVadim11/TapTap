@@ -60,7 +60,7 @@ const Header = () => {
 			sx={{
 				backgroundColor: 'transparent',
 				boxShadow: 'none',
-				height: isMobile ? '80px' : '116px',
+				height: isMobile ? '90px' : '114px',
 			}}
 		>
 			<Toolbar
