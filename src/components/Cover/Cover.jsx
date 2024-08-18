@@ -73,6 +73,7 @@ const Cover = () => {
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
+          justifyContent: 'center',
 					height: '100vh',
 					textAlign: 'center',
 					color: '#fff',
@@ -87,7 +88,6 @@ const Cover = () => {
 						letterSpacing: '-0.06em',
 						textAlign: 'center',
 						marginBottom: '24px',
-						marginTop: isMobile ? '40px' : '72px',
             fontWeight: '700'
 					}}
 				>
