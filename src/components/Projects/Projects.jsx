@@ -36,7 +36,7 @@ const Projects = () => {
 	};
 
 	return (
-		<Box
+		<Box id="projects"
 			sx={{
 				display: 'flex',
 				flexDirection: 'column',
