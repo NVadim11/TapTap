@@ -3,7 +3,7 @@ import { Box, Typography, Button } from '@mui/material';
 import { useTheme, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
 import Icons from '../Icons/Icons.jsx';
-import coverImg from '../../img/cover-img.png';
+import coverImg from '../../img/blueCover.png';
 
 const Cover = () => {
 	const theme = useTheme();
@@ -53,14 +53,22 @@ const Cover = () => {
 			<img src={coverImg} alt='Cover' style={coverStyles} />
 
 			<motion.div
-				style={{ position: 'absolute', left: '81px',  display: isMobile? 'none' : 'block' }}
+				style={{
+					position: 'absolute',
+					left: '81px',
+					display: isMobile ? 'none' : 'block',
+				}}
 				animate={macroChipAnimation}
 			>
 				<Icons.MacroChip />
 			</motion.div>
 
 			<motion.div
-				style={{ position: 'absolute', right: '200px',  display: isMobile? 'none' : 'block' }}
+				style={{
+					position: 'absolute',
+					right: '200px',
+					display: isMobile ? 'none' : 'block',
+				}}
 				animate={microChipAnimation}
 			>
 				<Icons.MicroChip />
@@ -73,7 +81,7 @@ const Cover = () => {
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
-          justifyContent: 'center',
+					justifyContent: 'center',
 					height: '100vh',
 					textAlign: 'center',
 					color: '#fff',
@@ -83,12 +91,12 @@ const Cover = () => {
 				<Typography
 					variant='h1'
 					sx={{
-            fontSize: isMobile ? '54px' : '88px',
+						fontSize: isMobile ? '54px' : '88px',
 						lineHeight: isMobile ? '122%' : '105%',
 						letterSpacing: '-0.06em',
 						textAlign: 'center',
 						marginBottom: '24px',
-            fontWeight: '700'
+						fontWeight: '700',
 					}}
 				>
 					{isMobile ? (
@@ -96,9 +104,7 @@ const Cover = () => {
 							Launch your <br /> Telegram <br /> app in two <br /> weeks
 						</>
 					) : (
-            <>
-            Launch your Telegram app in two weeks
-            </>
+						<>Launch your Telegram app in two weeks</>
 					)}
 				</Typography>
 				<Typography
@@ -108,24 +114,23 @@ const Cover = () => {
 						fontSize: '22px',
 						lineHeight: '145%',
 						textAlign: 'center',
-            marginTop: '24px',
+						marginTop: '24px',
 					}}
 				>
-          	{isMobile ? (
+					{isMobile ? (
 						<>
-            	All-in-One Hub <br /> for Launching and <br/>  Boosting Your Projects <br /> on Telegram!
+							All-in-One Hub <br /> for Launching and <br /> Boosting Your Projects <br />{' '}
+							on Telegram!
 						</>
 					) : (
-            <>
-            		All-in-One Hub for Launching and Boosting Your Projects on Telegram!
-            </>
+						<>All-in-One Hub for Launching and Boosting Your Projects on Telegram!</>
 					)}
 				</Typography>
 				<Button
 					variant='contained'
 					color='primary'
 					sx={{
-            marginTop: '30px',
+						marginTop: '30px',
 						borderRadius: '44px',
 						display: 'flex',
 						alignItems: 'center',
@@ -134,18 +139,18 @@ const Cover = () => {
 						textTransform: 'uppercase',
 						background: '#c8ff80',
 						transition: 'background-color 0.25s ease', // Плавный переход для фона кнопки
-            '& svg path' : {
-              transition: 'fill 0.25s ease'
-            },
+						'& svg path': {
+							transition: 'fill 0.25s ease',
+						},
 						'&:hover': {
 							backgroundColor: 'primary.main', // Используем цвет фона MUI по умолчанию
 							'& .text': {
 								color: '#ffffff', // Изменяем цвет текста на белый при ховере
 							},
-              '& svg path': {
-                fill: '#ffffff', // Изменяем цвет SVG path на белый при ховере
-                transition: 'fill 0.25s ease'
-              },
+							'& svg path': {
+								fill: '#ffffff', // Изменяем цвет SVG path на белый при ховере
+								transition: 'fill 0.25s ease',
+							},
 						},
 					}}
 				>
