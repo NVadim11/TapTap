@@ -72,6 +72,7 @@ const Header = () => {
 				backgroundColor: 'transparent',
 				boxShadow: 'none',
 				height: isMobile ? '90px' : '114px',
+				padding: isMobile ? '0 16px' : '0 66px'
 			}}
 		>
 			<Toolbar

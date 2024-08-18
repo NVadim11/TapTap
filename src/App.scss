@@ -18,13 +18,9 @@ html, body {
 
 .wrapper {
   background-color: #12163D;
-  padding: 0 66px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  @media (max-width: 1280px) {
-    padding: 0 16px;
-  }
 }
 
 .main {
