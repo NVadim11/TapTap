@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, Button } from '@mui/material'; // Import Button
 import { scroller } from 'react-scroll';
 import { useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -18,11 +18,22 @@ const Footer = () => {
 			setTimeout(() => {
 				scroller.scrollTo(id, {
 					smooth: true,
-					duration: 2000,
+					duration: 1500,
 					offset: -70,
 				});
 			}, 0);
 		}
+	};
+
+	// Shared button styles from Header component
+	const navBtns = {
+		padding: '8px 16px',
+		fontSize: '16px',
+		textTransform: 'initial',
+		transition: 'opacity 0.25s ease-in-out',
+		'&:hover': {
+			opacity: 0.8,
+		},
 	};
 
 	const menuItems = [
@@ -34,12 +45,6 @@ const Footer = () => {
 		{ name: 'Our Social Network', id: 'social' },
 		{ name: 'Policy', id: 'policy' },
 	];
-
-	const linkStyles = {
-		cursor: 'pointer',
-		color: 'inherit',
-		textDecoration: 'none',
-	};
 
 	return (
 		<Box
@@ -59,14 +64,14 @@ const Footer = () => {
 			>
 				{menuItems.map((item, index) => (
 					<Grid item key={index}>
-						<Typography sx={linkStyles} onClick={() => handleLinkClick(item.id)}>
+						<Button color='inherit' sx={navBtns} onClick={() => handleLinkClick(item.id)}>
 							{item.name}
-						</Typography>
+						</Button>
 					</Grid>
 				))}
 			</Grid>
 
-			<Box sx={{ marginTop: 4 }}>
+			<Box sx={{ marginTop: 4, color: 'rgba(255, 255, 255, 0.59)' }}>
 				<Typography variant='body2' color='inherit'>
 					© {new Date().getFullYear()} Your Company. All rights reserved.
 				</Typography>

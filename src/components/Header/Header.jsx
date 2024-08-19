@@ -59,7 +59,7 @@ const Header = () => {
 			scroller.scrollTo(id, {
 				smooth: true,
 				offset: -70,
-				duration: 2000,
+				duration: 1500,
 			});
 		}
 		handleMenuClose();
@@ -72,7 +72,7 @@ const Header = () => {
 				backgroundColor: 'transparent',
 				boxShadow: 'none',
 				height: isMobile ? '90px' : '114px',
-				padding: isMobile ? '0 16px' : '0 66px'
+				padding: isMobile ? '0 16px' : '0 66px',
 			}}
 		>
 			<Toolbar

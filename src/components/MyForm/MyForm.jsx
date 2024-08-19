@@ -1,7 +1,21 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import { TextField, Button, Box, Typography, ButtonBase } from '@mui/material';
 import Icons from '../Icons/Icons.jsx';
+
+const validationSchema = Yup.object({
+	name: Yup.string()
+		.required('Name is required')
+		.min(2, 'Name must be at least 2 characters long'),
+	email: Yup.string().email('Invalid email address').required('Email is required'),
+	phone: Yup.string()
+		.required('Phone number is required')
+		.matches(/^[0-9]{10}$/, 'Phone number must be exactly 10 digits long'),
+	message: Yup.string()
+		.required('Message is required')
+		.min(10, 'Message must be at least 10 characters long'),
+});
 
 const MyForm = () => {
 	const iconButtonStyles = {
@@ -28,11 +42,12 @@ const MyForm = () => {
 				phone: '',
 				message: '',
 			}}
+			validationSchema={validationSchema}
 			onSubmit={(values) => {
 				console.log('Form Data', values);
 			}}
 		>
-			{() => (
+			{({ errors, touched }) => (
 				<>
 					<Form id='form'>
 						<Box
@@ -86,6 +101,8 @@ const MyForm = () => {
 									placeholder='ENTER YOUR NAME'
 									fullWidth
 									variant='outlined'
+									error={touched.name && Boolean(errors.name)}
+									helperText={<ErrorMessage name='name' />}
 									InputLabelProps={{
 										sx: {
 											fontWeight: 400,
@@ -120,6 +137,8 @@ const MyForm = () => {
 									placeholder='ENTER YOUR EMAIL'
 									fullWidth
 									variant='outlined'
+									error={touched.email && Boolean(errors.email)}
+									helperText={<ErrorMessage name='email' />}
 									InputLabelProps={{
 										sx: {
 											fontWeight: 400,
@@ -154,6 +173,8 @@ const MyForm = () => {
 									placeholder='ENTER YOUR PHONE NUMBER'
 									fullWidth
 									variant='outlined'
+									error={touched.phone && Boolean(errors.phone)}
+									helperText={<ErrorMessage name='phone' />}
 									InputLabelProps={{
 										sx: {
 											fontWeight: 400,
@@ -190,6 +211,8 @@ const MyForm = () => {
 									multiline
 									rows={4}
 									variant='outlined'
+									error={touched.message && Boolean(errors.message)}
+									helperText={<ErrorMessage name='message' />}
 									InputLabelProps={{
 										sx: {
 											fontWeight: 400,
