@@ -1,7 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useTheme, useMediaQuery } from '@mui/material';
 import * as Yup from 'yup';
 import { TextField, Button, Box, Typography, ButtonBase } from '@mui/material';
+import formCover from '../../img/formCover.png';
 import Icons from '../Icons/Icons.jsx';
 
 const validationSchema = Yup.object({
@@ -18,6 +20,18 @@ const validationSchema = Yup.object({
 });
 
 const MyForm = () => {
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
+
+	const formCoverStyles = {
+		position: 'absolute',
+		top: 450,
+		left: isMobile ? '-16px' : '-66px',
+		width: '100%',
+		height: '100%',
+		opacity: '1',
+	};
+
 	const iconButtonStyles = {
 		width: 66,
 		height: 66,
@@ -29,7 +43,7 @@ const MyForm = () => {
 		transition: '.25s',
 		borderRadius: '50%',
 		'&:hover': {
-			backgroundColor: 'rgba(10, 14, 53, 0.8)',
+			backgroundColor: 'rgba(10, 14, 53, 0.4)',
 			transition: '.25s',
 		},
 	};
@@ -49,17 +63,27 @@ const MyForm = () => {
 		>
 			{({ errors, touched }) => (
 				<>
-					<Form id='form'>
+					<Form
+						id='form'
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							marginTop: isMobile ? '89px' : '178px',
+							position: 'relative',
+						}}
+					>
 						<Box
 							sx={{
 								display: 'flex',
 								flexDirection: 'column',
 								alignItems: 'center',
 								borderRadius: '24px',
-								maxWidth: '865px',
-								margin: '0 auto',
-								padding: '63px 104px 56px',
+								maxWidth: isMobile ? '358px' : '765px',
+								margin: isMobile ? '0 16px' : '0 auto',
+								padding: isMobile ? '32px 21px 47px' : '63px 104px 56px',
 								backgroundColor: '#fff',
+								zIndex: 1,
 							}}
 						>
 							<Typography
@@ -67,7 +91,7 @@ const MyForm = () => {
 								gutterBottom
 								sx={{
 									fontWeight: 700,
-									fontSize: '74px',
+									fontSize: isMobile ? '46px' : '74px',
 									marginBottom: '48px',
 									lineHeight: '116%',
 									letterSpacing: '-0.06em',
@@ -254,25 +278,40 @@ const MyForm = () => {
 									textAlign: 'center',
 									color: '#0e0b3d',
 									backgroundColor: '#c8ff80',
+									'&:hover': {
+										color: '#fff',
+									},
 								}}
 							>
 								Send
 							</Button>
 						</Box>
+						<img
+							src={formCover}
+							alt='Form Cover'
+							style={{
+								position: 'absolute',
+								top: 80,
+								zIndex: 0,
+								width: '100%',
+								height: '100%',
+							}}
+						/>
 					</Form>
+
 					<Box sx={{ marginTop: 4, textAlign: 'center' }} id='social'>
 						<Typography
 							variant='h6'
 							gutterBottom
 							sx={{
 								fontWeight: 700,
-								fontSize: '44px',
+								fontSize: isMobile ? '32px' : '44px',
 								lineHeight: '105%',
 								letterSpacing: '-0.06em',
 								textTransform: 'capitalize',
 								textAlign: 'center',
 								color: '#fff',
-								marginTop: '112px',
+								marginTop: isMobile ? '72px' : '112px',
 								marginBottom: '24px',
 							}}
 						>
