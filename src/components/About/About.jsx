@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { useTheme, useMediaQuery } from '@mui/material';
 import Icons from '../Icons/Icons.jsx';
 
@@ -296,6 +296,23 @@ const About = () => {
 					</Box>
 				</Box>
 			</Box>
+
+			<Button
+				variant='outlined'
+				sx={{
+					border: '1px solid #0e0b3d',
+					borderRadius: '44px',
+					padding: '0 27.5px',
+					height: '58px',
+					marginTop: '40px',
+					color: '#0e0b3d',
+					fontSize: '18px',
+					fontWeight: '600',
+					textTransform: 'uppercase', 
+				}}
+			>
+				Book a Discovery Call
+			</Button>
 		</Box>
 	);
 };
