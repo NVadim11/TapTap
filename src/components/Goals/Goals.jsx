@@ -8,14 +8,24 @@ const Goals = () => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280px'));
 
-	const coverStyles = {
+	const coverBaseStyles = {
 		position: 'absolute',
-		width: '100%',
-		height: '100%',
 		opacity: '0.5',
-		top: '30%',
+		top: '20%',
 		right: 0,
 		zIndex: 0, // Ensure these covers are in the background
+	};
+
+	const greenCoverStyles = {
+		...coverBaseStyles,
+		height: '60%',
+		width: '100%',
+	};
+
+	const whiteCoverStyles = {
+		...coverBaseStyles,
+		height: '80%',
+		width: '100%',
 	};
 
 	return (
@@ -32,8 +42,8 @@ const Goals = () => {
 			}}
 		>
 			{/* Background Covers */}
-			<img src={greenCover} alt='Green Cover' style={coverStyles} />
-			<img src={whiteCover} alt='White Cover' style={coverStyles} />
+			<img src={greenCover} alt='Green Cover' style={greenCoverStyles} />
+			<img src={whiteCover} alt='White Cover' style={whiteCoverStyles} />
 
 			{/* Main Block */}
 			<Box

@@ -24,7 +24,7 @@ const MyForm = () => {
 
 	const formCoverStyles = {
 		position: 'absolute',
-		top: 450,
+		top: 220,
 		left: isMobile ? '-16px' : '-66px',
 		width: '100%',
 		height: '100%',
