@@ -139,22 +139,27 @@ const MyForm = () => {
 											sx: {
 												fontWeight: 400,
 												fontSize: '16px',
-												lineHeight: '100%',
 												textTransform: 'uppercase',
 												color: '#0e0b3d',
+												transform: 'translate(14px, 16px) scale(1)', // Fixes label positioning
+												'&.Mui-focused': {
+													transform: 'translate(14px, -9px) scale(0.75)', // Moves label up when focused
+												},
 											},
 										}}
 										InputProps={{
 											sx: {
-												border: '1.50px solid #b3b8d0',
+												padding: '14px', // Adjust padding to ensure the label doesn't interfere with the border
 												borderRadius: '12px',
 												'&::placeholder': {
 													fontWeight: 400,
 													fontSize: '16px',
-													lineHeight: '100%',
 													textTransform: 'uppercase',
 													textAlign: 'center',
 													color: '#b3b8d0',
+												},
+												'&.Mui-focused': {
+													borderColor: '#000', // Change border color when focused
 												},
 											},
 										}}
@@ -175,19 +180,16 @@ const MyForm = () => {
 											sx: {
 												fontWeight: 400,
 												fontSize: '16px',
-												lineHeight: '100%',
 												textTransform: 'uppercase',
 												color: '#0e0b3d',
 											},
 										}}
 										InputProps={{
 											sx: {
-												border: '1.50px solid #b3b8d0',
 												borderRadius: '12px',
 												'&::placeholder': {
 													fontWeight: 400,
 													fontSize: '16px',
-													lineHeight: '100%',
 													textTransform: 'uppercase',
 													textAlign: 'center',
 													color: '#b3b8d0',
@@ -211,19 +213,16 @@ const MyForm = () => {
 											sx: {
 												fontWeight: 400,
 												fontSize: '16px',
-												lineHeight: '100%',
 												textTransform: 'uppercase',
 												color: '#0e0b3d',
 											},
 										}}
 										InputProps={{
 											sx: {
-												border: '1.50px solid #b3b8d0',
 												borderRadius: '12px',
 												'&::placeholder': {
 													fontWeight: 400,
 													fontSize: '16px',
-													lineHeight: '100%',
 													textTransform: 'uppercase',
 													textAlign: 'center',
 													color: '#b3b8d0',
@@ -249,19 +248,16 @@ const MyForm = () => {
 											sx: {
 												fontWeight: 400,
 												fontSize: '16px',
-												lineHeight: '100%',
 												textTransform: 'uppercase',
 												color: '#0e0b3d',
 											},
 										}}
 										InputProps={{
 											sx: {
-												border: '1.50px solid #b3b8d0',
 												borderRadius: '12px',
 												'&::placeholder': {
 													fontWeight: 400,
 													fontSize: '16px',
-													lineHeight: '100%',
 													textTransform: 'uppercase',
 													textAlign: 'center',
 													color: '#b3b8d0',
@@ -281,7 +277,6 @@ const MyForm = () => {
 										width: '185px',
 										fontWeight: '700',
 										fontSize: '16px',
-										lineHeight: '100%',
 										textTransform: 'uppercase',
 										textAlign: 'center',
 										color: '#0e0b3d',
