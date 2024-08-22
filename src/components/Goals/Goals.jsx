@@ -2,6 +2,7 @@ import React from 'react';
 import { useTheme, useMediaQuery, Box, Typography, Grid, Paper } from '@mui/material';
 import greenCover from '../../img/greenCover.png';
 import whiteCover from '../../img/whiteCover.png';
+import Icons from '../Icons/Icons';
 
 const Goals = () => {
 	const theme = useTheme();
@@ -12,9 +13,9 @@ const Goals = () => {
 		width: '100%',
 		height: '100%',
 		opacity: '0.5',
-		zIndex: 1,
 		top: '30%',
 		right: 0,
+		zIndex: 0, // Ensure these covers are in the background
 	};
 
 	return (
@@ -27,14 +28,20 @@ const Goals = () => {
 				justifyContent: 'center',
 				alignItems: 'center',
 				padding: '137px 16px 0',
+				zIndex: 1, // Ensure content is above background covers
 			}}
 		>
+			{/* Background Covers */}
+			<img src={greenCover} alt='Green Cover' style={coverStyles} />
+			<img src={whiteCover} alt='White Cover' style={coverStyles} />
+
 			{/* Main Block */}
 			<Box
 				sx={{
 					marginBottom: '40px',
-					width: isMobile ? '100%' : '920px',
+					width: isMobile ? 'auto' : '358px',
 					textAlign: 'center',
+					zIndex: 2, // Ensure this is on top of the covers
 				}}
 			>
 				<Typography
@@ -67,19 +74,21 @@ const Goals = () => {
 			</Box>
 
 			{/* Two Information Blocks */}
-			<Grid container spacing={4}>
+			<Grid container spacing={4} sx={{ zIndex: 2 }}>
 				{[
 					{
 						title: 'Telegram: The Future of the Web',
 						description:
 							'Telegram Mini Apps for businesses, projects, websites, Telegram pages, or any other social network/digital identity will become essential and commonplace within a year. Prepare for the future of web interaction.',
 						borderRadius: '24px 24px 0 24px',
+						icon: <Icons.telegramIcon />,
 					},
 					{
 						title: 'Unlock Rapid Growth with Tapal.ca',
 						description:
 							"Experience rapid growth and increased profits in just 2 weeks with Tapal.ca. Our Telegram Mini Apps are the fastest way to scale your business. Tapal.ca is your gateway to success, offering the quickest growth you've ever seen with your own customized Telegram Mini Apps.",
 						borderRadius: '24px 24px 24px 0',
+						icon: <Icons.planetIcon />,
 					},
 				].map((block, index) => (
 					<Grid item xs={12} md={6} key={index}>
@@ -89,11 +98,15 @@ const Goals = () => {
 								borderRadius: block.borderRadius,
 								padding: '20px',
 								background: 'rgba(10, 14, 53, 0.32)',
+								zIndex: 2, // Ensure this is on top of the covers
 							}}
 						>
 							<Typography
 								variant='h5'
 								sx={{
+									display: 'flex', // Flex container
+									alignItems: 'center', // Vertically center icon and title
+									gap: '8px', // Space between icon and title
 									fontWeight: 700,
 									fontSize: '28px',
 									lineHeight: '129%',
@@ -103,6 +116,17 @@ const Goals = () => {
 									marginBottom: '16px',
 								}}
 							>
+								<Box
+									sx={{
+										width: '32px',
+										height: '32px',
+										display: 'flex', // Ensure the icon is centered within the box
+										justifyContent: 'center',
+										alignItems: 'center',
+									}}
+								>
+									{block.icon}
+								</Box>
 								{block.title}
 							</Typography>
 							<Typography
@@ -128,7 +152,7 @@ const Goals = () => {
 				direction={isMobile ? 'column' : 'row'}
 				justifyContent='center'
 				alignItems='center'
-				sx={{ marginTop: '40px' }}
+				sx={{ marginTop: '40px', zIndex: 2 }}
 			>
 				{[
 					{ title: '35M+', description: 'Tap Swap' },
@@ -146,6 +170,7 @@ const Goals = () => {
 								padding: '20px',
 								boxShadow: 'none',
 								border: 'none',
+								zIndex: 2,
 							}}
 						>
 							<Typography
@@ -162,7 +187,7 @@ const Goals = () => {
 							<Typography
 								variant='body2'
 								sx={{
-									color: '#c8ff80',
+									color: '#fff',
 									fontSize: '18px',
 									fontWeight: 500,
 									marginTop: '10px',
@@ -174,10 +199,6 @@ const Goals = () => {
 					</Grid>
 				))}
 			</Grid>
-
-			{/* Background Covers */}
-			<img src={greenCover} alt='Green Cover' style={coverStyles} />
-			<img src={whiteCover} alt='White Cover' style={coverStyles} />
 		</Box>
 	);
 };
