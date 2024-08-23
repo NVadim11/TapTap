@@ -18,6 +18,11 @@ const Policy = () => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 
+	const headerVariants = {
+		hidden: { opacity: 0, y: -50 },
+		visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+	};
+
 	const coverStyles = {
 		position: 'absolute',
 		width: '100%',
