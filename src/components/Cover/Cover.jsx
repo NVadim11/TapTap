@@ -36,6 +36,44 @@ const Cover = () => {
 		},
 	};
 
+	const titleAnimation = {
+		opacity: [0, 1],
+		y: [50, 0],
+		transition: {
+		  duration: 1.5,
+		  ease: 'easeInOut',
+		  delay: 0.5, 
+		},
+	  };
+
+	  const subtitleAnimation = {
+		opacity: [0, 1],
+		y: [50, 0],
+		transition: {
+		  duration: 1.5,
+		  ease: 'easeInOut',
+		  delay: 1, 
+		},
+	  };
+
+	  const buttonLoadAnimation = {
+		scale: [1, 1.1, 1],
+		transition: {
+		  duration: 0.8,
+		  ease: 'easeInOut',
+		  delay: 1.5, 
+		},
+	  };
+
+	  const backgroundAnimation = {
+		y: [0, 20, 0],
+		transition: {
+		  duration: 10,
+		  ease: 'easeInOut',
+		  repeat: Infinity,
+		},
+	  };
+
 	return (
 		<Box
 			id='cover'
@@ -88,6 +126,10 @@ const Cover = () => {
 					maxWidth: '1066px',
 				}}
 			>
+				<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={titleAnimation}
+>
 				<Typography
 					variant='h1'
 					sx={{
@@ -107,6 +149,11 @@ const Cover = () => {
 						<>Launch your Telegram app in two weeks</>
 					)}
 				</Typography>
+				</motion.div>
+				<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={subtitleAnimation}
+>
 				<Typography
 					variant='body1'
 					sx={{
@@ -126,6 +173,8 @@ const Cover = () => {
 						<>All-in-One Hub for Launching and Boosting Your Projects on Telegram!</>
 					)}
 				</Typography>
+				</motion.div>
+				<motion.div animate={buttonLoadAnimation}>
 				<Button
 					variant='contained'
 					color='primary'
@@ -178,6 +227,7 @@ const Cover = () => {
 						</Box>
 					</Typography>
 				</Button>
+				</motion.div>
 			</Box>
 		</Box>
 	);
