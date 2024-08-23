@@ -6,7 +6,7 @@ import Icons from '../Icons/Icons';
 
 const Goals = () => {
 	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down('1280px'));
+	const isMobile = useMediaQuery(theme.breakpoints.down('1280'));
 
 	const coverBaseStyles = {
 		position: 'absolute',
@@ -49,7 +49,7 @@ const Goals = () => {
 			<Box
 				sx={{
 					marginBottom: '40px',
-					width: isMobile ? 'auto' : '358px',
+					width: isMobile ? 'auto' : '920px',
 					textAlign: 'center',
 					zIndex: 2, // Ensure this is on top of the covers
 				}}
@@ -107,6 +107,7 @@ const Goals = () => {
 							sx={{
 								borderRadius: block.borderRadius,
 								padding: '20px',
+								height: isMobile ? '440px' : '260px',
 								background: 'rgba(10, 14, 53, 0.32)',
 								zIndex: 2, // Ensure this is on top of the covers
 							}}
@@ -114,9 +115,10 @@ const Goals = () => {
 							<Typography
 								variant='h5'
 								sx={{
-									display: 'flex', // Flex container
-									alignItems: 'center', // Vertically center icon and title
-									gap: '8px', // Space between icon and title
+									display: 'flex',
+									flexDirection: isMobile ? 'column' : 'row', 
+									alignItems: isMobile ? 'left' : 'center', 
+									gap: isMobile ? '4px' : '8px', 
 									fontWeight: 700,
 									fontSize: '28px',
 									lineHeight: '129%',
@@ -130,15 +132,17 @@ const Goals = () => {
 									sx={{
 										width: '32px',
 										height: '32px',
-										display: 'flex', // Ensure the icon is centered within the box
+										display: 'flex',
 										justifyContent: 'center',
 										alignItems: 'center',
+										marginBottom: isMobile ? '8px' : '0', // Отступ снизу у иконки на мобильных устройствах
 									}}
 								>
 									{block.icon}
 								</Box>
 								{block.title}
 							</Typography>
+
 							<Typography
 								variant='body1'
 								sx={{
