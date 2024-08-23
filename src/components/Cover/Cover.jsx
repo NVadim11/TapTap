@@ -120,7 +120,6 @@ const Cover = () => {
 					flexDirection: 'column',
 					alignItems: 'center',
 					justifyContent: 'center',
-					height: '100vh',
 					textAlign: 'center',
 					color: '#fff',
 					maxWidth: '1066px',
@@ -133,7 +132,7 @@ const Cover = () => {
 				<Typography
 					variant='h1'
 					sx={{
-						fontSize: isMobile ? '54px' : '88px',
+						fontSize: isMobile ? '44px' : '88px',
 						lineHeight: isMobile ? '122%' : '105%',
 						letterSpacing: '-0.06em',
 						textAlign: 'center',
@@ -143,7 +142,7 @@ const Cover = () => {
 				>
 					{isMobile ? (
 						<>
-							Launch your <br /> Telegram <br /> app in two <br /> weeks
+							Launch your <br /> Telegram app <br/> in two weeks
 						</>
 					) : (
 						<>Launch your Telegram app in two weeks</>
